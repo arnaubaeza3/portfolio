@@ -1,0 +1,7 @@
+# Pre-compressed build artifacts (regenerated automatically)
+*.br
+*.gz
+
+# Local backups
+*.bak
+*.bak-*
