@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="1" stop-color="#16161b"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d1d22"/>
+      <stop offset="1" stop-color="#16161b"/>
+    </linearGradient>
+    <style>
+      .accent { fill: #e8c690; }
+      .accent-text { fill: #e8c690; }
+      .text { fill: #f5f5f7; }
+      .dim { fill: #8e8e93; }
+      .card { fill: url(#cardBg); stroke: #26262d; stroke-width: 1; }
+      .tag { fill: #131317; stroke: #3a3a42; stroke-width: 1; }
+      .tag-text { fill: #c1c1c8; font-size: 13px; }
+      .title { font-family: 'Fraunces', Georgia, serif; }
+      .label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="720" fill="url(#bg)"/>
+
+  <!-- Grid lines sutiles -->
+  <g stroke="rgba(255,255,255,0.025)" stroke-width="1">
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="320" x2="1200" y2="320"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="640" x2="1200" y2="640"/>
+  </g>
+
+  <!-- Título -->
+  <g transform="translate(60, 60)">
+    <line x1="0" y1="0" x2="32" y2="0" stroke="#e8c690" stroke-width="1.5"/>
+    <text x="44" y="4" class="accent-text label">Stack técnico</text>
+    <text x="0" y="46" class="text title" font-size="32" font-weight="400">Herramientas con <tspan font-style="italic" fill="#8e8e93">las que trabajo</tspan></text>
+  </g>
+
+  <!-- ROW 1 -->
+  <!-- Card: Cloud & Infraestructura -->
+  <g transform="translate(60, 160)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <path d="M 11 17 h -1 a 7 7 0 1 0 -1 -14 h 0 a 5 5 0 0 0 -5 5 H 11" transform="translate(7, 7)" fill="none" stroke="#e8c690" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Cloud &amp; Infra</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)">
+        <rect width="48" height="22" rx="5" class="tag"/><text x="24" y="16" text-anchor="middle" class="tag-text">Azure</text>
+      </g>
+      <g transform="translate(56,0)"><rect width="42" height="22" rx="5" class="tag"/><text x="21" y="16" text-anchor="middle" class="tag-text">Linux</text></g>
+      <g transform="translate(106,0)"><rect width="46" height="22" rx="5" class="tag"/><text x="23" y="16" text-anchor="middle" class="tag-text">nginx</text></g>
+      <g transform="translate(160,0)"><rect width="38" height="22" rx="5" class="tag"/><text x="19" y="16" text-anchor="middle" class="tag-text">DNS</text></g>
+      <g transform="translate(206,0)"><rect width="50" height="22" rx="5" class="tag"/><text x="25" y="16" text-anchor="middle" class="tag-text">TLS</text></g>
+
+      <g transform="translate(0,32)"><rect width="64" height="22" rx="5" class="tag"/><text x="32" y="16" text-anchor="middle" class="tag-text">systemd</text></g>
+      <g transform="translate(72,32)"><rect width="64" height="22" rx="5" class="tag"/><text x="32" y="16" text-anchor="middle" class="tag-text">fail2ban</text></g>
+    </g>
+  </g>
+
+  <!-- Card: Backend & APIs -->
+  <g transform="translate(425, 160)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <path d="M 5 12 h 14 M 12 5 l 7 7 -7 7" transform="translate(7, 7)" fill="none" stroke="#e8c690" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Backend &amp; APIs</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)"><rect width="46" height="22" rx="5" class="tag"/><text x="23" y="16" text-anchor="middle" class="tag-text">Flask</text></g>
+      <g transform="translate(54,0)"><rect width="100" height="22" rx="5" class="tag"/><text x="50" y="16" text-anchor="middle" class="tag-text">Flask-SocketIO</text></g>
+      <g transform="translate(162,0)"><rect width="72" height="22" rx="5" class="tag"/><text x="36" y="16" text-anchor="middle" class="tag-text">REST APIs</text></g>
+      <g transform="translate(242,0)"><rect width="44" height="22" rx="5" class="tag"/><text x="22" y="16" text-anchor="middle" class="tag-text">PWA</text></g>
+
+      <g transform="translate(0,32)"><rect width="84" height="22" rx="5" class="tag"/><text x="42" y="16" text-anchor="middle" class="tag-text">WebSockets</text></g>
+      <g transform="translate(92,32)"><rect width="56" height="22" rx="5" class="tag"/><text x="28" y="16" text-anchor="middle" class="tag-text">SQLite</text></g>
+    </g>
+  </g>
+
+  <!-- Card: Lenguajes -->
+  <g transform="translate(790, 160)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <path d="M 16 18 l 6 -6 l -6 -6 M 8 6 l -6 6 l 6 6" transform="translate(7, 7)" fill="none" stroke="#e8c690" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Lenguajes</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)"><rect width="32" height="22" rx="5" class="tag"/><text x="16" y="16" text-anchor="middle" class="tag-text">C</text></g>
+      <g transform="translate(40,0)"><rect width="56" height="22" rx="5" class="tag"/><text x="28" y="16" text-anchor="middle" class="tag-text">Python</text></g>
+      <g transform="translate(104,0)"><rect width="44" height="22" rx="5" class="tag"/><text x="22" y="16" text-anchor="middle" class="tag-text">Bash</text></g>
+      <g transform="translate(156,0)"><rect width="80" height="22" rx="5" class="tag"/><text x="40" y="16" text-anchor="middle" class="tag-text">JavaScript</text></g>
+      <g transform="translate(244,0)"><rect width="40" height="22" rx="5" class="tag"/><text x="20" y="16" text-anchor="middle" class="tag-text">SQL</text></g>
+
+      <g transform="translate(0,32)"><rect width="74" height="22" rx="5" class="tag"/><text x="37" y="16" text-anchor="middle" class="tag-text">HTML/CSS</text></g>
+      <g transform="translate(82,32)"><rect width="40" height="22" rx="5" class="tag"/><text x="20" y="16" text-anchor="middle" class="tag-text">Java</text></g>
+    </g>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Card: IA & Computer Vision -->
+  <g transform="translate(60, 340)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <circle cx="25" cy="25" r="5" fill="none" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="25" y1="13" x2="25" y2="20" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="25" y1="30" x2="25" y2="37" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="13" y1="25" x2="20" y2="25" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="30" y1="25" x2="37" y2="25" stroke="#e8c690" stroke-width="1.6"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">IA &amp; Computer Vision</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)"><rect width="74" height="22" rx="5" class="tag"/><text x="37" y="16" text-anchor="middle" class="tag-text">OpenAI API</text></g>
+      <g transform="translate(82,0)"><rect width="90" height="22" rx="5" class="tag"/><text x="45" y="16" text-anchor="middle" class="tag-text">GPT-4o-mini</text></g>
+      <g transform="translate(180,0)"><rect width="60" height="22" rx="5" class="tag"/><text x="30" y="16" text-anchor="middle" class="tag-text">Whisper</text></g>
+
+      <g transform="translate(0,32)"><rect width="60" height="22" rx="5" class="tag"/><text x="30" y="16" text-anchor="middle" class="tag-text">OpenCV</text></g>
+      <g transform="translate(68,32)"><rect width="84" height="22" rx="5" class="tag"/><text x="42" y="16" text-anchor="middle" class="tag-text">Resemblyzer</text></g>
+      <g transform="translate(160,32)"><rect width="92" height="22" rx="5" class="tag"/><text x="46" y="16" text-anchor="middle" class="tag-text">RAG / TF-IDF</text></g>
+    </g>
+  </g>
+
+  <!-- Card: Frontend & 3D -->
+  <g transform="translate(425, 340)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <rect x="11" y="13" width="20" height="14" rx="2" fill="none" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="17" y1="33" x2="25" y2="33" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="21" y1="29" x2="21" y2="33" stroke="#e8c690" stroke-width="1.6"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Frontend &amp; 3D</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)"><rect width="60" height="22" rx="5" class="tag"/><text x="30" y="16" text-anchor="middle" class="tag-text">Three.js</text></g>
+      <g transform="translate(68,0)"><rect width="44" height="22" rx="5" class="tag"/><text x="22" y="16" text-anchor="middle" class="tag-text">GLSL</text></g>
+      <g transform="translate(120,0)"><rect width="60" height="22" rx="5" class="tag"/><text x="30" y="16" text-anchor="middle" class="tag-text">Chart.js</text></g>
+      <g transform="translate(188,0)"><rect width="48" height="22" rx="5" class="tag"/><text x="24" y="16" text-anchor="middle" class="tag-text">ES6+</text></g>
+    </g>
+  </g>
+
+  <!-- Card: Bajo nivel -->
+  <g transform="translate(790, 340)">
+    <rect class="card" width="350" height="160" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <polygon points="20,11 12,23 21,23 20,33 30,21 21,21 22,11" fill="none" stroke="#e8c690" stroke-width="1.6" stroke-linejoin="round"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Rendimiento &amp; Bajo nivel</text>
+    </g>
+    <g transform="translate(24, 88)">
+      <g transform="translate(0,0)"><rect width="40" height="22" rx="5" class="tag"/><text x="20" y="16" text-anchor="middle" class="tag-text">perf</text></g>
+      <g transform="translate(48,0)"><rect width="48" height="22" rx="5" class="tag"/><text x="24" y="16" text-anchor="middle" class="tag-text">SIMD</text></g>
+      <g transform="translate(104,0)"><rect width="60" height="22" rx="5" class="tag"/><text x="30" y="16" text-anchor="middle" class="tag-text">Profiling</text></g>
+      <g transform="translate(172,0)"><rect width="48" height="22" rx="5" class="tag"/><text x="24" y="16" text-anchor="middle" class="tag-text">Caché</text></g>
+
+      <g transform="translate(0,32)"><rect width="80" height="22" rx="5" class="tag"/><text x="40" y="16" text-anchor="middle" class="tag-text">Hardening</text></g>
+      <g transform="translate(88,32)"><rect width="84" height="22" rx="5" class="tag"/><text x="42" y="16" text-anchor="middle" class="tag-text">UEFI/GRUB</text></g>
+    </g>
+  </g>
+
+  <!-- ROW 3 (idiomas) -->
+  <g transform="translate(60, 520)">
+    <rect class="card" width="1080" height="120" rx="14"/>
+    <g transform="translate(24, 24)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <circle cx="25" cy="25" r="11" fill="none" stroke="#e8c690" stroke-width="1.6"/>
+      <line x1="14" y1="25" x2="36" y2="25" stroke="#e8c690" stroke-width="1.6"/>
+      <text x="50" y="24" class="text title" font-size="17" font-weight="500">Idiomas</text>
+    </g>
+    <g transform="translate(24, 80)">
+      <g transform="translate(0,0)"><rect width="120" height="24" rx="5" class="tag"/><text x="60" y="17" text-anchor="middle" class="tag-text">Català (nativo)</text></g>
+      <g transform="translate(132,0)"><rect width="128" height="24" rx="5" class="tag"/><text x="64" y="17" text-anchor="middle" class="tag-text">Español (nativo)</text></g>
+      <g transform="translate(272,0)"><rect width="104" height="24" rx="5" class="tag"/><text x="52" y="17" text-anchor="middle" class="tag-text">English (B2)</text></g>
+      <g transform="translate(388,0)"><rect width="100" height="24" rx="5" class="tag"/><text x="50" y="17" text-anchor="middle" class="tag-text">Français (A1)</text></g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="690" text-anchor="middle" class="dim" font-size="13">arnauserver.me · 100% vanilla · sin frameworks ni dependencias externas</text>
+</svg>

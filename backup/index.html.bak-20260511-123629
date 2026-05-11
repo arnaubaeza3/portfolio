@@ -966,7 +966,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Azure</span><span class="skill-tag">Linux</span>
         <span class="skill-tag">nginx</span><span class="skill-tag">DNS</span>
-        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span><span class="skill-tag">fail2ban</span>
+        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span><span class="skill-tag">fail2ban</span><span class="skill-tag">fail2ban</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-2">
@@ -975,7 +975,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">C</span><span class="skill-tag">Python</span>
         <span class="skill-tag">Bash</span><span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
+        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-3">
@@ -984,7 +984,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span>
         <span class="skill-tag">perf</span><span class="skill-tag">tmux</span>
-        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span>
+        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-1">

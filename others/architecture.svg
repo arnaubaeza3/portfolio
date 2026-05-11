@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="1" stop-color="#16161b"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d1d22"/>
+      <stop offset="1" stop-color="#16161b"/>
+    </linearGradient>
+    <linearGradient id="vmBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(232,198,144,0.10)"/>
+      <stop offset="1" stop-color="rgba(232,198,144,0.04)"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 8 5 L 0 10 z" fill="#e8c690"/>
+    </marker>
+    <style>
+      .title { font-family: 'Fraunces', Georgia, serif; }
+      .label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+      .card { fill: url(#cardBg); stroke: #26262d; stroke-width: 1; }
+      .text { fill: #f5f5f7; }
+      .dim { fill: #8e8e93; }
+      .accent { fill: #e8c690; }
+      .box-title { font-size: 16px; font-weight: 600; fill: #f5f5f7; }
+      .box-sub { font-size: 12px; fill: #c1c1c8; }
+      .arrow-label { font-size: 11px; fill: #8e8e93; font-weight: 500; letter-spacing: 0.05em; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" fill="url(#bg)"/>
+
+  <!-- Grid lines sutiles -->
+  <g stroke="rgba(255,255,255,0.025)" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- Título -->
+  <g transform="translate(60, 60)">
+    <line x1="0" y1="0" x2="32" y2="0" stroke="#e8c690" stroke-width="1.5"/>
+    <text x="44" y="4" class="accent label">Arquitectura</text>
+    <text x="0" y="46" class="text title" font-size="32" font-weight="400">Del navegador al kernel <tspan font-style="italic" fill="#8e8e93">— self-hosted</tspan></text>
+  </g>
+
+  <!-- ZONA 1: Usuario (browser) -->
+  <g transform="translate(50, 200)">
+    <rect class="card" width="200" height="120" rx="14"/>
+    <g transform="translate(20, 20)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <circle cx="18" cy="18" r="9" fill="none" stroke="#e8c690" stroke-width="1.6" transform="translate(7,7)"/>
+      <text x="50" y="14" class="box-title">Browser</text>
+      <text x="50" y="32" class="box-sub">Cliente</text>
+    </g>
+    <text x="20" y="92" class="dim" font-size="11">Cualquier navegador moderno</text>
+    <text x="20" y="106" class="dim" font-size="11">— sin JS frameworks requeridos</text>
+  </g>
+
+  <!-- Flecha 1 -->
+  <g>
+    <path d="M 260 260 L 340 260" stroke="#e8c690" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="300" y="248" text-anchor="middle" class="arrow-label">HTTPS</text>
+    <text x="300" y="280" text-anchor="middle" class="arrow-label" fill="#22c55e">443/TCP</text>
+  </g>
+
+  <!-- ZONA 2: DNS -->
+  <g transform="translate(350, 200)">
+    <rect class="card" width="180" height="120" rx="14"/>
+    <g transform="translate(20, 20)">
+      <rect width="36" height="36" rx="10" fill="rgba(232,198,144,0.10)"/>
+      <circle cx="18" cy="18" r="10" fill="none" stroke="#e8c690" stroke-width="1.6" transform="translate(7,7)"/>
+      <line x1="14" y1="25" x2="36" y2="25" stroke="#e8c690" stroke-width="1.4"/>
+      <text x="50" y="14" class="box-title">DNS</text>
+      <text x="50" y="32" class="box-sub">arnauserver.me</text>
+    </g>
+    <text x="20" y="92" class="dim" font-size="11">A record → IP Azure</text>
+    <text x="20" y="106" class="dim" font-size="11">Let's Encrypt cert válido</text>
+  </g>
+
+  <!-- Flecha 2 -->
+  <g>
+    <path d="M 540 260 L 620 260" stroke="#e8c690" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="580" y="248" text-anchor="middle" class="arrow-label">resolve</text>
+  </g>
+
+  <!-- VM Azure container -->
+  <g transform="translate(630, 130)">
+    <rect width="520" height="430" rx="18" fill="url(#vmBg)" stroke="#e8c690" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.9"/>
+    
+    <g transform="translate(20, 24)">
+      <rect width="32" height="32" rx="9" fill="rgba(232,198,144,0.15)"/>
+      <path d="M 18 10 h -1 a 7 7 0 1 0 -1 -14 h 0 a 5 5 0 0 0 -5 5 H 18" transform="translate(6, 7)" fill="none" stroke="#e8c690" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="44" y="14" class="accent" font-size="13" font-weight="600" letter-spacing="0.1em">VM AZURE · UBUNTU LTS</text>
+      <text x="44" y="30" class="dim" font-size="11">Self-hosted · hardening end-to-end</text>
+    </g>
+
+    <!-- nginx -->
+    <g transform="translate(40, 110)">
+      <rect class="card" width="440" height="90" rx="12"/>
+      <g transform="translate(16, 16)">
+        <rect width="32" height="32" rx="8" fill="rgba(0,150,57,0.15)"/>
+        <text x="16" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#009639">N</text>
+        <text x="46" y="14" class="box-title" font-size="15">nginx</text>
+        <text x="46" y="30" class="box-sub">TLS 1.3 · HTTP/2 · gzip</text>
+      </g>
+      <g transform="translate(220, 16)">
+        <text x="0" y="14" class="dim" font-size="11">PORT 80 → 443 redirect</text>
+        <text x="0" y="30" class="dim" font-size="11">PORT 443 → static + /monitor</text>
+      </g>
+      <g transform="translate(16, 60)">
+        <rect width="80" height="20" rx="4" fill="#131317" stroke="#3a3a42"/>
+        <text x="40" y="14" text-anchor="middle" font-size="11" fill="#c1c1c8">Let's Encrypt</text>
+        <rect x="88" y="0" width="60" height="20" rx="4" fill="#131317" stroke="#3a3a42"/>
+        <text x="118" y="14" text-anchor="middle" font-size="11" fill="#c1c1c8">HSTS</text>
+        <rect x="156" y="0" width="74" height="20" rx="4" fill="#131317" stroke="#3a3a42"/>
+        <text x="193" y="14" text-anchor="middle" font-size="11" fill="#c1c1c8">CSP headers</text>
+      </g>
+    </g>
+
+    <!-- Flecha vertical dividir -->
+    <line x1="170" y1="220" x2="170" y2="250" stroke="#e8c690" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <line x1="350" y1="220" x2="350" y2="250" stroke="#e8c690" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+    <!-- Static files -->
+    <g transform="translate(40, 250)">
+      <rect class="card" width="200" height="100" rx="12"/>
+      <g transform="translate(16, 16)">
+        <rect width="28" height="28" rx="7" fill="rgba(232,198,144,0.10)"/>
+        <path d="M 8 6 H 22 V 22 H 8 z" transform="translate(7,7)" fill="none" stroke="#e8c690" stroke-width="1.4"/>
+        <text x="40" y="12" class="box-title" font-size="13">/static</text>
+        <text x="40" y="28" class="box-sub" font-size="11">index.html</text>
+      </g>
+      <text x="16" y="72" class="dim" font-size="11">HTML + CSS + JS</text>
+      <text x="16" y="86" class="dim" font-size="11">1 archivo · 0 deps</text>
+    </g>
+
+    <!-- Monitor -->
+    <g transform="translate(260, 250)">
+      <rect class="card" width="220" height="100" rx="12"/>
+      <g transform="translate(16, 16)">
+        <rect width="28" height="28" rx="7" fill="rgba(34,197,94,0.15)"/>
+        <circle cx="14" cy="14" r="3" fill="#22c55e" transform="translate(7,7)"/>
+        <text x="40" y="12" class="box-title" font-size="13">/monitor</text>
+        <text x="40" y="28" class="box-sub" font-size="11">Python · live metrics</text>
+      </g>
+      <text x="16" y="62" class="dim" font-size="11">CPU · RAM · Disco</text>
+      <text x="16" y="76" class="dim" font-size="11">Bandwidth · Uptime</text>
+      <text x="16" y="90" class="dim" font-size="11">TLS cert exp · fail2ban</text>
+    </g>
+
+    <!-- Hardening / Security strip -->
+    <g transform="translate(40, 370)">
+      <rect width="440" height="40" rx="10" fill="#131317" stroke="#3a3a42"/>
+      <text x="16" y="16" class="accent" font-size="10" font-weight="600" letter-spacing="0.1em">HARDENING</text>
+      <text x="16" y="32" class="dim" font-size="11">SSH key-only · UFW · fail2ban · sysctl tunings · systemd timers · auto-updates</text>
+    </g>
+  </g>
+
+  <!-- Repos labels -->
+  <g transform="translate(60, 620)">
+    <text x="0" y="0" class="dim" font-size="12">Repo principal: </text>
+    <text x="100" y="0" class="accent" font-size="12" font-weight="500">arnaubaeza3/portfolio</text>
+    <text x="280" y="0" class="dim" font-size="12">·  Infraestructura: </text>
+    <text x="400" y="0" class="accent" font-size="12" font-weight="500">arnaubaeza3/azure-linux-server</text>
+  </g>
+</svg>
