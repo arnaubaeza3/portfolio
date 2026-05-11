@@ -803,7 +803,7 @@ footer .live-link::before {
       <span>Barcelona · UAB</span>
     </div>
     <h1 class="hero-name">Arnau<br/>Baeza <em>Muñoz</em></h1>
-    <p class="hero-title">Computer&nbsp;Engineering <strong>·</strong> Backend &amp; Sistemas <strong>·</strong> IA aplicada <strong>·</strong> Bajo nivel</p>
+    <p class="hero-title">Computer&nbsp;Engineering <strong>·</strong> Linux &amp; Cloud <strong>·</strong> Bajo nivel</p>
     <p class="hero-desc">
       Estudiante de Ingeniería Informática en la UAB con experiencia real
       en gestión de equipos, operaciones y tecnología. Resolutivo, apasionado
@@ -818,8 +818,8 @@ footer .live-link::before {
     </div>
     <div class="hero-stats" role="list">
       <div class="hero-stat" role="listitem">
-        <span class="num">5<em>+</em></span>
-        <span class="lbl">Proyectos públicos</span>
+        <span class="num">3<em>+</em></span>
+        <span class="lbl">Años en código</span>
       </div>
       <div class="hero-stat" role="listitem">
         <span class="num">100<em>%</em></span>
@@ -847,7 +847,7 @@ footer .live-link::before {
     </div>
     <div class="hero-card c-2" aria-hidden="true">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-      Python · AI · Backend
+      C · Bash · Python
     </div>
     <div class="hero-card c-3" aria-hidden="true">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -934,7 +934,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Azure</span><span class="skill-tag">Linux</span>
         <span class="skill-tag">nginx</span><span class="skill-tag">DNS</span>
-        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span><span class="skill-tag">fail2ban</span>
+        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-2">
@@ -943,7 +943,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">C</span><span class="skill-tag">Python</span>
         <span class="skill-tag">Bash</span><span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
+        <span class="skill-tag">HTML / CSS</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-3">
@@ -952,7 +952,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span>
         <span class="skill-tag">perf</span><span class="skill-tag">tmux</span>
-        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span>
+        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-1">
@@ -980,38 +980,9 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Català (nadiu)</span>
         <span class="skill-tag">Español (nativo)</span>
-        <span class="skill-tag">English (B2)</span>
+        <span class="skill-tag">English (C1)</span>
       </div>
     </div>
-        <div class="skill-block reveal reveal-delay-1">
-          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          <h4>Backend &amp; APIs</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Flask</span><span class="skill-tag">Flask-SocketIO</span>
-            <span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span>
-            <span class="skill-tag">PWA</span><span class="skill-tag">SQLite</span>
-          </div>
-        </div>
-
-        <div class="skill-block reveal reveal-delay-2">
-          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg></div>
-          <h4>IA &amp; Computer Vision</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">OpenAI API</span><span class="skill-tag">GPT-4o-mini</span>
-            <span class="skill-tag">Whisper</span><span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">Resemblyzer</span><span class="skill-tag">RAG / TF-IDF</span>
-          </div>
-        </div>
-
-        <div class="skill-block reveal reveal-delay-3">
-          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h4>Frontend &amp; 3D</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Three.js</span><span class="skill-tag">GLSL</span>
-            <span class="skill-tag">Chart.js</span><span class="skill-tag">ES6+</span>
-          </div>
-        </div>
-
   </div>
 </section>
 
@@ -1023,24 +994,8 @@ footer .live-link::before {
   </div>
   <div class="projects-list">
 
-          <a href="https://github.com/arnaubaeza3" target="_blank" rel="noopener" class="project-row reveal">
-        <span class="proj-num">01</span>
-        <div class="proj-info">
-          <p class="proj-name">CampusBot &mdash; Asistente de voz con IA</p>
-          <p class="proj-desc">Robot guía para la Escola d'Enginyeria UAB con reconocimiento facial (OpenCV + SFace), identificación de voz (Resemblyzer), GPT-4o-mini, RAG TF-IDF propio y frontend 3D en Three.js. Arquitectura multi-instancia con Socket.IO + PWA instalable.</p>
-        </div>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">Flask</span>
-          <span class="proj-tag">OpenAI</span><span class="proj-tag">OpenCV</span>
-          <span class="proj-tag">Three.js</span>
-        </div>
-        <span class="proj-arrow" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
-        </span>
-      </a>
-
-<a href="/monitor/" class="project-row reveal">
-      <span class="proj-num">02</span>
+    <a href="/monitor/" class="project-row reveal">
+      <span class="proj-num">01</span>
       <div class="proj-info">
         <p class="proj-name">arnauserver.me <span class="proj-live">live</span></p>
         <p class="proj-desc">VM Ubuntu en Azure sirviendo este portfolio + dashboard de métricas en tiempo real. nginx + TLS, fail2ban, hardening SSH/sysctl, monitoring custom en Python.</p>
@@ -1055,7 +1010,7 @@ footer .live-link::before {
     </a>
 
     <a href="https://github.com/arnaubaeza3/azure-linux-server" target="_blank" rel="noopener" class="project-row reveal reveal-delay-1">
-      <span class="proj-num">03</span>
+      <span class="proj-num">02</span>
       <div class="proj-info">
         <p class="proj-name">azure-linux-server</p>
         <p class="proj-desc">Documentación y scripts del despliegue completo de la VM: red, DNS, certificados, hardening y observabilidad. Repositorio reproducible.</p>
@@ -1070,7 +1025,7 @@ footer .live-link::before {
     </a>
 
     <a href="https://github.com/arnaubaeza3" target="_blank" rel="noopener" class="project-row reveal reveal-delay-2">
-      <span class="proj-num">04</span>
+      <span class="proj-num">03</span>
       <div class="proj-info">
         <p class="proj-name">Optimización en C — UAB</p>
         <p class="proj-desc">Análisis de rendimiento con perf y optimizaciones a bajo nivel: localidad de caché, vectorización SIMD y gestión cuidadosa de memoria.</p>
@@ -1085,7 +1040,7 @@ footer .live-link::before {
     </a>
 
     <a href="https://github.com/arnaubaeza3" target="_blank" rel="noopener" class="project-row reveal reveal-delay-3">
-      <span class="proj-num">05</span>
+      <span class="proj-num">04</span>
       <div class="proj-info">
         <p class="proj-name">Gestión de proyectos — ES (UAB)</p>
         <p class="proj-desc">Trabajo en equipo con GitHub, control de versiones y planificación colaborativa dentro del contexto universitario de la UAB.</p>
@@ -1149,11 +1104,7 @@ footer .live-link::before {
     </div>
 
     <p class="contact-meta reveal reveal-delay-3">
-      <strong>Disponible tardes (L-V 15:00+) y fines de semana completos.</strong>
-      <span class="sep">·</span>
-      Abierto a prácticas, convenio universitario y contratos parciales.
-      <span class="sep">·</span>
-      <strong>Respondo en menos de 24 h</strong>
+      <strong>Suelo responder en menos de 24 h</strong>
       <span class="sep">·</span>
       Barcelona, UTC+1
     </p>
