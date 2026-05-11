@@ -821,17 +821,18 @@ footer .live-link::before {
     animation-range: exit 0% exit 70%;
   }
   .hero-photo-wrap {
-    animation:
-      fadeIn 0.9s 0.45s var(--ease) forwards,
-      hero-photo-exit linear both;
-    animation-timeline: auto, view();
-    animation-range: auto, exit 0% exit 85%;
+    opacity: 1;
+    animation: hero-photo-exit linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 85%;
   }
   @keyframes hero-exit {
-    to { opacity: 0; transform: translateY(-80px); }
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-80px); }
   }
   @keyframes hero-photo-exit {
-    to { opacity: 0; transform: translateY(-50px) scale(0.9); }
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to   { opacity: 0; transform: translateY(-50px) scale(0.9); }
   }
 
   /* Parallax: floating cards alrededor de la foto se mueven a velocidad distinta */
