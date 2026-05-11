@@ -6,25 +6,6 @@
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
 <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)"/>
 <title>Arnau Baeza Muñoz — Portfolio</title>
-  <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://arnauserver.me"/>
-  <meta property="og:title" content="Arnau Baeza — Backend, Cloud &amp; IA aplicada"/>
-  <meta property="og:description" content="Estudiante de Ingeniería Informática (UAB). Backend, sistemas Linux self-hosted e IA aplicada. Disponible para prácticas."/>
-  <meta property="og:image" content="https://arnauserver.me/images/og-preview.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:locale" content="es_ES"/>
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Arnau Baeza — Backend, Cloud &amp; IA aplicada"/>
-  <meta name="twitter:description" content="Estudiante de Ingeniería Informática (UAB). Disponible para prácticas."/>
-  <meta name="twitter:image" content="https://arnauserver.me/images/og-preview.png"/>
-
-  <meta name="description" content="Portfolio personal de Arnau Baeza Muñoz — estudiante de Ingeniería Informática (UAB), desarrollador backend y de sistemas Linux. Self-hosted en Azure."/>
-  <meta name="author" content="Arnau Baeza Muñoz"/>
-
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d1d1f'/%3E%3Ctext x='16' y='22' font-family='Georgia%2C serif' font-size='14' font-weight='500' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EAB%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -834,11 +815,7 @@ footer .live-link::before {
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
       </a>
       <a href="#contact" class="btn btn-secondary">Contactar</a>
-            <a href="/cv-arnau-baeza.pdf" download class="btn btn-secondary">
-          Descargar CV
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5 9l5 5 5-5M4 17h12"/></svg>
-        </a>
-</div>
+    </div>
     <div class="hero-stats" role="list">
       <div class="hero-stat" role="listitem">
         <span class="num">5<em>+</em></span>
@@ -897,11 +874,10 @@ footer .live-link::before {
         y operaciones en entornos exigentes.
       </p>
       <p class="about-text reveal reveal-delay-2">
-        No solo escribo código: construyo sistemas completos. Desde una VM Linux
-        autogestionada en Azure hasta <strong>CampusBot</strong> — un asistente de voz
-        con IA, reconocimiento facial y frontend 3D — me interesa entender cada capa
-        del stack, del kernel a la UX. Esta misma web está servida desde una VM
-        Ubuntu en Azure que administro yo, desde el bootloader hasta el certificado TLS.
+        No solo escribo código: resuelvo problemas. Me interesa el rendimiento,
+        la infraestructura propia y entender los sistemas hasta el último byte.
+        Esta misma web está servida desde una VM Ubuntu en Azure que administro yo
+        — desde el kernel hasta el certificado TLS.
       </p>
       <div class="traits reveal reveal-delay-3">
         <span class="trait">Resolutivo</span>
@@ -919,14 +895,6 @@ footer .live-link::before {
             <p>VM Linux en Azure sirviendo arnauserver.me con nginx + TLS, monitoring en vivo y endurecimiento end-to-end.</p>
           </div>
         </div>
-              <div class="timeline-item">
-                <span class="timeline-year">2025<em>·</em></span>
-                <div class="timeline-content">
-                  <h4>CampusBot — Asistente de voz con IA</h4>
-                  <p>Robot guía para la Escola d'Enginyeria UAB: OpenAI GPT-4o-mini, reconocimiento facial con OpenCV y frontend 3D en Three.js.</p>
-                </div>
-              </div>
-
         <div class="timeline-item">
           <span class="timeline-year">2024<em>·</em></span>
           <div class="timeline-content">
@@ -966,7 +934,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Azure</span><span class="skill-tag">Linux</span>
         <span class="skill-tag">nginx</span><span class="skill-tag">DNS</span>
-        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span><span class="skill-tag">fail2ban</span><span class="skill-tag">fail2ban</span>
+        <span class="skill-tag">HTTPS / TLS</span><span class="skill-tag">systemd</span><span class="skill-tag">fail2ban</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-2">
@@ -975,7 +943,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">C</span><span class="skill-tag">Python</span>
         <span class="skill-tag">Bash</span><span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
+        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-3">
@@ -984,7 +952,7 @@ footer .live-link::before {
       <div class="skill-tags">
         <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span>
         <span class="skill-tag">perf</span><span class="skill-tag">tmux</span>
-        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span>
+        <span class="skill-tag">Trello</span><span class="skill-tag">Agile</span><span class="skill-tag">pytest</span><span class="skill-tag">Docker</span>
       </div>
     </div>
     <div class="skill-block reveal reveal-delay-1">
@@ -1274,23 +1242,5 @@ footer .live-link::before {
   });
 })();
 </script>
-
-  <script>
-    // Live status check: verifica que /monitor responde y refuerza el badge Disponible
-    (function () {
-      const eyebrow = document.querySelector('.hero-eyebrow');
-      if (!eyebrow) return;
-      fetch('/monitor/', { method: 'HEAD', cache: 'no-store' })
-        .then(function (r) {
-          if (r.ok || r.status < 500) {
-            const dot = eyebrow.querySelector('.live-dot');
-            if (dot) dot.title = 'Servidor activo · /monitor responde';
-            // Marcar visualmente como verificado (sin romper layout)
-            eyebrow.setAttribute('data-server-active', 'true');
-          }
-        })
-        .catch(function () { /* silencioso */ });
-    })();
-  </script>
 </body>
 </html>
