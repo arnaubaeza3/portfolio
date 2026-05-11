@@ -525,7 +525,7 @@ section { padding: var(--gap) 80px; max-width: var(--maxw); margin: 0 auto; }
 
 /* ── Contact ── */
 #contact {
-  background: #0a0a0c; color: #f5f5f7;
+  background: var(--bg-inv); color: var(--bg);
   text-align: center; max-width: none;
   padding: var(--gap) 80px;
   position: relative; overflow: hidden;
@@ -572,7 +572,7 @@ section { padding: var(--gap) 80px; max-width: var(--maxw); margin: 0 auto; }
   font-family: var(--serif);
   font-size: clamp(44px, 6vw, 84px);
   font-weight: 400; letter-spacing: -0.035em;
-  line-height: 1.0; color: #f5f5f7;
+  line-height: 1.0; color: var(--bg);
   margin-bottom: 24px;
 }
 .contact-heading em {
@@ -601,7 +601,7 @@ section { padding: var(--gap) 80px; max-width: var(--maxw); margin: 0 auto; }
   font-size: clamp(20px, 2.6vw, 30px);
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: #f5f5f7;
+  color: var(--bg);
   position: relative;
   max-width: 100%;
 }
@@ -663,7 +663,7 @@ section { padding: var(--gap) 80px; max-width: var(--maxw); margin: 0 auto; }
 
 /* ── Footer ── */
 footer {
-  background: #0a0a0c; color: rgba(245, 245, 247, 0.4);
+  background: var(--bg-inv); color: rgba(245, 245, 247, 0.4);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 28px 80px; display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 12px;
