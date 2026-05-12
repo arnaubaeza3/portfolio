@@ -69,5 +69,71 @@
     copyBtn.classList.add('copied');
     setTimeout(() => copyBtn.classList.remove('copied'), 1600);
   });
+
+  // ── Live status pill from /status.json ──
+  const statusLink = document.getElementById('footerStatus');
+  if (statusLink) {
+    fetch('/status.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => {
+      if (!d) return;
+      const days = Math.floor(d.uptime_seconds / 86400);
+      const hours = Math.floor((d.uptime_seconds % 86400) / 3600);
+      const up = days >= 1 ? `${days}d ${hours}h` : `${hours}h`;
+      const bans = (d.banned_ips && typeof d.banned_ips === 'object') ? d.banned_ips.total : d.banned_ips;
+      statusLink.textContent = `up ${up} · cert ${d.cert_days_remaining}d · load ${d.load['1m']}`;
+      statusLink.title = `RAM ${d.memory_mib.used}/${d.memory_mib.total} MiB · ${bans} IP banned · disk ${d.disk_root.used_pct}%`;
+    }).catch(() => {});
+  }
+
+  // ── Web Vitals (sendBeacon to /vitals) ──
+  if ('PerformanceObserver' in window) {
+    const sendVital = (name, value) => {
+      try {
+        const body = JSON.stringify({
+          name, value: Math.round(value * 1000) / 1000,
+          path: location.pathname, lang: document.documentElement.lang,
+          ua: navigator.userAgent.slice(0, 200), ts: Date.now()
+        });
+        if (navigator.sendBeacon) navigator.sendBeacon('/vitals', body);
+      } catch {}
+    };
+    // LCP
+    try {
+      const po = new PerformanceObserver(list => {
+        const e = list.getEntries().pop();
+        if (e) sendVital('LCP', e.startTime);
+      });
+      po.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch {}
+    // CLS
+    let cls = 0;
+    try {
+      const po2 = new PerformanceObserver(list => {
+        list.getEntries().forEach(e => { if (!e.hadRecentInput) cls += e.value; });
+      });
+      po2.observe({ type: 'layout-shift', buffered: true });
+    } catch {}
+    // INP-like (event timing)
+    let inpMax = 0;
+    try {
+      const po3 = new PerformanceObserver(list => {
+        list.getEntries().forEach(e => { if (e.duration > inpMax) inpMax = e.duration; });
+      });
+      po3.observe({ type: 'event', durationThreshold: 16, buffered: true });
+    } catch {}
+    // Flush on hide
+    addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        if (cls) sendVital('CLS', cls);
+        if (inpMax) sendVital('INP', inpMax);
+        try {
+          const nav = performance.getEntriesByType('navigation')[0];
+          if (nav) {
+            sendVital('TTFB', nav.responseStart);
+            sendVital('LOAD', nav.loadEventEnd);
+          }
+        } catch {}
+      }
+    }, { once: true });
+  }
 })();
 
