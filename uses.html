@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)"/>
+<title>/uses — Stack de arnauserver.me</title>
+<meta name="description" content="Hardware, software y configuración con la que está montado arnauserver.me. Cómo está hosteada esta propia web."/>
+<meta name="author" content="Arnau Baeza Muñoz"/>
+<link rel="canonical" href="https://arnauserver.me/uses.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://arnauserver.me/uses.html"/>
+<meta property="og:title" content="/uses — Stack de arnauserver.me"/>
+<meta property="og:description" content="Cómo está montada esta propia web — VM Azure, nginx, CrowdSec, TLS, hardening."/>
+<meta property="og:image" content="https://arnauserver.me/images/og-preview.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --serif: 'Fraunces', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --bg-soft: #f5f5f7; --border: #e6e6ea;
+  --text: #0a0a0c; --text-2: #4b4b50; --text-3: #8e8e93;
+  --accent: #b8843d; --accent-soft: rgba(184,132,61,0.10);
+  --code-bg: #f5f5f7; --code-text: #4b4b50;
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0c; --bg-soft: #131317; --border: #26262d;
+  --text: #f5f5f7; --text-2: #c1c1c8; --text-3: #8e8e93;
+  --accent: #e8c690; --accent-soft: rgba(232,198,144,0.10);
+  --code-bg: #131317; --code-text: #c1c1c8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; font-feature-settings: "ss01"; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 48px 28px 96px; }
+
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+.back { color: var(--text-2); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+.back:hover { color: var(--accent); }
+.back svg { width: 14px; height: 14px; }
+.actions { display: flex; gap: 8px; }
+.btn-mini { font: inherit; font-size: 13px; padding: 8px 14px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 999px; color: var(--text-2); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 180ms ease; }
+.btn-mini:hover { color: var(--accent); border-color: var(--accent); }
+
+header { margin-bottom: 48px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 12px; }
+h1 { font-family: var(--serif); font-size: clamp(40px, 6vw, 64px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+h1 em { color: var(--accent); font-style: italic; }
+.lede { font-size: 19px; color: var(--text-2); max-width: 60ch; margin-top: 20px; }
+
+section { margin-top: 56px; }
+h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin-bottom: 20px; letter-spacing: -0.01em; }
+h3 { font-size: 15px; font-weight: 600; margin: 24px 0 6px; }
+p { color: var(--text-2); margin-bottom: 14px; }
+ul { padding-left: 0; list-style: none; margin: 8px 0 16px; }
+li { color: var(--text-2); padding-left: 20px; position: relative; margin-bottom: 6px; }
+li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 8px; height: 1px; background: var(--accent); }
+
+code { font-family: var(--mono); font-size: 0.92em; background: var(--code-bg); color: var(--code-text); padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); }
+
+.spec-grid { display: grid; grid-template-columns: minmax(140px, 200px) 1fr; gap: 12px 24px; font-size: 14px; margin: 16px 0 24px; }
+.spec-grid dt { color: var(--text-3); font-family: var(--mono); font-size: 12px; padding-top: 2px; }
+.spec-grid dd { color: var(--text); }
+
+.callout { background: var(--bg-soft); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: var(--text-2); }
+
+.diagram { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 20px 0; overflow-x: auto; }
+.diagram pre { font-family: var(--mono); font-size: 12px; color: var(--text-2); line-height: 1.5; white-space: pre; }
+
+footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .spec-grid { grid-template-columns: 1fr; gap: 4px 0; }
+  .spec-grid dt { padding-top: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="/" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al portfolio
+    </a>
+    <div class="actions">
+      <button type="button" class="btn-mini" id="themeToggle">Tema</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="eyebrow">/uses</div>
+    <h1>Cómo está montada<br/><em>esta web</em>.</h1>
+    <p class="lede">Notas sobre la máquina y el software que sirve <strong style="color:var(--text)">arnauserver.me</strong>. Una VM pequeña en Azure, nginx, HTML estático, y la configuración que la mantiene en pie.</p>
+  </header>
+
+  <section>
+    <h2>Máquina</h2>
+    <dl class="spec-grid">
+      <dt>VPS</dt><dd>Azure VM <code>Standard_B1s</code> · 1 vCPU AMD EPYC · 1 GB RAM · 62 GB SSD</dd>
+      <dt>Región</dt><dd>West Europe (Países Bajos)</dd>
+      <dt>SO</dt><dd>Ubuntu Server 24.04 LTS · kernel <code>6.17.0-azure</code></dd>
+      <dt>Filesystem</dt><dd>ext4 con <code>fstrim.timer</code> semanal · swap de 2 GB</dd>
+      <dt>Tuning</dt><dd><code>vm.swappiness=10</code>, journald cap 50 MB, snap eliminado</dd>
+      <dt>Updates</dt><dd><code>unattended-upgrades</code> con reinicio automático a las 04:00 si toca</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Web stack</h2>
+    <dl class="spec-grid">
+      <dt>HTTP server</dt><dd>nginx 1.24 con módulos brotli (filter + static) y headers-more</dd>
+      <dt>TLS</dt><dd>Let's Encrypt ECDSA · TLS 1.2/1.3 · ciphers Mozilla intermediate · HSTS 2 años</dd>
+      <dt>Compresión</dt><dd>Brotli y gzip pre-comprimidos (<code>.br</code>, <code>.gz</code>)</dd>
+      <dt>Caché</dt><dd>HTML 5 min revalidate · CSS/JS 7 días · imágenes y PDF 30 días <code>immutable</code></dd>
+      <dt>Frontend</dt><dd>HTML y CSS a mano, JS mínimo, sin framework ni build step</dd>
+      <dt>Fuentes</dt><dd>Fraunces (serif) e Inter (sans) vía Google Fonts con <code>preconnect</code></dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Seguridad</h2>
+    <ul>
+      <li><strong>CrowdSec</strong> con parsers de sshd y nginx, bouncer en nftables. Bans automáticos y blocklist comunitaria.</li>
+      <li><strong>UFW</strong> sólo expone <code>22</code> (rate-limited), <code>80</code> y <code>443</code>.</li>
+      <li><strong>SSH</strong>: sólo ed25519, sin password, <code>MaxAuthTries 3</code>, ciphers chacha20/aes-gcm, KEX <code>sntrup761x25519</code>.</li>
+      <li><strong>nginx</strong>: server tokens off, HSTS, CSP, COOP, CORP, Referrer-Policy, Permissions-Policy, X-Frame-Options. Catch-all 444 para Host/SNI desconocidos, <code>ssl_reject_handshake on</code>.</li>
+      <li><strong>Rate-limit</strong> 30 req/min global con burst 20.</li>
+      <li><strong>Header <code>Server</code></strong> sobrescrito; bloqueo de <code>.bak</code>, <code>.old</code>, <code>.git</code> y similares.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Arquitectura</h2>
+    <div class="diagram">
+<pre>
+   Internet
+       │
+       ▼
+   ┌──────────────────────────────────────────┐
+   │  Azure VM (Ubuntu 24.04, 1 vCPU, 1 GB)   │
+   │                                          │
+   │   ┌───────┐    ┌──────────┐              │
+   │   │  UFW  │ ──▶│ nftables │ ◀─ CrowdSec  │
+   │   └───┬───┘    └──────────┘              │
+   │       │ 80/443                           │
+   │       ▼                                  │
+   │   ┌──────────┐                           │
+   │   │  nginx   │ ── /var/www/html (static) │
+   │   │  1.24    │ ── /vitals  → :8082       │
+   │   └──────────┘                           │
+   │       │                                  │
+   │       │ logs                             │
+   │       ▼                                  │
+   │   ┌──────────┐                           │
+   │   │ journald │ ◀── ssh-attack-alert.sh   │
+   │   │   50 MB  │     (cron 5m → msmtp)     │
+   │   └──────────┘                           │
+   └──────────────────────────────────────────┘
+</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>Automatización</h2>
+    <ul>
+      <li><strong>Certbot</strong> renueva el certificado vía <code>certbot.timer</code>, 30 días antes de expirar.</li>
+      <li><strong>Cron de 5 minutos</strong>: <code>ssh-attack-alert.sh</code> compara la lista de IPs baneadas y envía aviso por <code>msmtp</code> si cambia.</li>
+      <li><strong>Status</strong>: un timer regenera <code>/status.json</code> cada minuto con uptime, load, último deploy y días hasta expirar el cert.</li>
+      <li><strong>Deploy</strong>: hook <code>post-commit</code> en <code>/var/www/html/.git</code> regenera <code>.gz</code> y <code>.br</code> de los ficheros cambiados.</li>
+      <li><strong>Email saliente</strong>: <code>msmtp</code> contra <code>smtp.gmail.com</code> con App Password; el cron de <code>azureuser</code> entrega a inbox vía <code>MAILTO=</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cliente personal</h2>
+    <dl class="spec-grid">
+      <dt>Daily driver</dt><dd>MacBook Air M4 · macOS Sequoia</dd>
+      <dt>Linux dev</dt><dd>Arch Linux ARM y BlackArch en VMware Fusion (aarch64)</dd>
+      <dt>WM</dt><dd>bspwm + polybar + sxhkd + picom + eww</dd>
+      <dt>Shell</dt><dd>zsh con starship</dd>
+      <dt>Editor</dt><dd>Neovim y VSCode</dd>
+      <dt>Terminal</dt><dd>Ghostty · WezTerm</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <span>Última actualización: 12 may 2026 · <a href="/status.json">status.json</a></span>
+    <span><a href="/">arnauserver.me</a> · <a href="/cv.html">CV</a> · <a href="/en/">EN</a></span>
+  </footer>
+</div>
+
+<script src="/js/page-theme.js" defer></script>
+</body>
+</html>

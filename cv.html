@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)"/>
+<title>CV — Arnau Baeza Muñoz</title>
+<meta name="description" content="CV de Arnau Baeza Muñoz — Estudiante de Ingeniería Informática (UAB). Backend, IA aplicada y sistemas Linux."/>
+<meta name="author" content="Arnau Baeza Muñoz"/>
+<link rel="canonical" href="https://arnauserver.me/cv.html"/>
+<meta property="og:type" content="profile"/>
+<meta property="og:url" content="https://arnauserver.me/cv.html"/>
+<meta property="og:title" content="CV — Arnau Baeza Muñoz"/>
+<meta property="og:description" content="Backend, Cloud & IA aplicada. Disponible para prácticas."/>
+<meta property="og:image" content="https://arnauserver.me/images/og-preview.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --serif: 'Fraunces', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --bg-soft: #f5f5f7; --border: #e6e6ea;
+  --text: #0a0a0c; --text-2: #4b4b50; --text-3: #8e8e93;
+  --accent: #b8843d; --accent-soft: rgba(184,132,61,0.10);
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0c; --bg-soft: #131317; --border: #26262d;
+  --text: #f5f5f7; --text-2: #c1c1c8; --text-3: #8e8e93;
+  --accent: #e8c690; --accent-soft: rgba(232,198,144,0.10);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); background: var(--bg); color: var(--text);
+  line-height: 1.55; font-weight: 400; -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv01";
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 48px 28px 96px; }
+
+/* Top bar */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+.back { color: var(--text-2); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+.back:hover { color: var(--accent); }
+.back svg { width: 14px; height: 14px; }
+.actions { display: flex; gap: 8px; }
+.btn-mini {
+  font: inherit; font-size: 13px; padding: 8px 14px; background: var(--bg-soft);
+  border: 1px solid var(--border); border-radius: 999px; color: var(--text-2);
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: all 180ms ease;
+}
+.btn-mini:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Header */
+header { border-bottom: 1px solid var(--border); padding-bottom: 28px; margin-bottom: 36px; }
+h1 { font-family: var(--serif); font-size: clamp(38px, 5vw, 56px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+h1 em { color: var(--accent); font-style: italic; font-weight: 400; }
+.tagline { font-size: 18px; color: var(--text-2); margin-top: 8px; font-weight: 400; }
+.meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--text-3); }
+.meta a { color: inherit; text-decoration: none; }
+.meta a:hover { color: var(--accent); }
+.meta svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; opacity: 0.7; }
+.avail-pill {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px;
+  background: var(--accent-soft); color: var(--accent); padding: 6px 14px;
+  border-radius: 999px; margin-bottom: 14px; font-weight: 500;
+}
+.avail-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+
+/* Sections */
+section { margin-top: 40px; }
+h2 {
+  font-family: var(--serif); font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 18px;
+}
+h3 { font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 4px; letter-spacing: -0.01em; }
+.role-meta { color: var(--text-3); font-size: 13px; margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.role-meta .where { color: var(--text-2); }
+.role-meta .when { font-variant-numeric: tabular-nums; }
+
+.entry { margin-bottom: 28px; }
+.entry ul { padding-left: 0; list-style: none; }
+.entry li {
+  font-size: 15px; color: var(--text-2); padding-left: 18px; position: relative;
+  margin-bottom: 6px; line-height: 1.6;
+}
+.entry li::before { content: "·"; color: var(--accent); position: absolute; left: 4px; font-weight: 700; }
+.entry .tech { margin-top: 10px; font-size: 13px; color: var(--text-3); }
+.entry .tech strong { color: var(--text-2); font-weight: 500; }
+.entry .links { margin-top: 6px; font-size: 13px; }
+.entry .links a { color: var(--accent); text-decoration: none; }
+.entry .links a:hover { text-decoration: underline; }
+
+/* Skills grid */
+.skills { display: grid; grid-template-columns: minmax(140px, 200px) 1fr; gap: 14px 24px; font-size: 14px; }
+.skills dt { color: var(--text-3); font-weight: 500; }
+.skills dd { color: var(--text); }
+
+/* Langs */
+.langs { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.lang { padding: 14px 18px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; }
+.lang .name { font-weight: 500; }
+.lang .level { color: var(--text-3); font-size: 13px; margin-top: 2px; }
+
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* Print */
+@media print {
+  :root[data-theme] { --bg: #fff; --bg-soft: #f7f7f7; --border: #d4d4d8; --text: #000; --text-2: #2a2a2e; --text-3: #5e5e64; --accent: #8a5d22; --accent-soft: rgba(138,93,34,0.08); }
+  body { background: white; color: black; }
+  .topbar, footer { display: none; }
+  .wrap { padding: 0; max-width: 100%; }
+  section { margin-top: 24px; page-break-inside: avoid; }
+  h1 { font-size: 32px; }
+  .avail-pill { display: none; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="/" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al portfolio
+    </a>
+    <div class="actions">
+      <a href="/cv-arnau-baeza.pdf" class="btn-mini" download>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10 3v10M5 9l5 5 5-5M4 17h12"/></svg>
+        PDF
+      </a>
+      <button type="button" class="btn-mini" onclick="window.print()">Imprimir</button>
+      <button type="button" class="btn-mini" id="themeToggle">Tema</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="avail-pill">Disponible · Barcelona · UAB</div>
+    <h1>Arnau Baeza <em>Muñoz</em></h1>
+    <p class="tagline">Estudiante de Ingeniería Informática · Desarrollador Backend &amp; Full-Stack</p>
+    <div class="meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bellaterra, Barcelona</span>
+      <a href="tel:+34671418389"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+34 671 418 389</a>
+      <a href="mailto:arnau.baeza@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>arnau.baeza@gmail.com</a>
+      <a href="https://arnauserver.me">arnauserver.me</a>
+      <a href="https://github.com/arnaubaeza3">github.com/arnaubaeza3</a>
+      <a href="https://linkedin.com/in/arnaubaeza">linkedin/arnaubaeza</a>
+      <span>Carnet B + vehículo</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Perfil</h2>
+    <p style="font-size: 16px; color: var(--text-2); max-width: 70ch;">
+      Estudiante de 2.º curso de Ingeniería Informática en la UAB con sólida experiencia práctica en desarrollo full-stack, integración de IA (OpenAI, OpenCV) y administración de sistemas Linux. Autor de <strong style="color:var(--text)">CampusBot</strong>, un asistente de voz inteligente para la Escola d'Enginyeria UAB que integra GPT-4o-mini, reconocimiento facial y de voz, RAG y arquitectura multi-instancia. Combino formación técnica con más de dos años en gestión de equipos como encargado en McDonald's: liderazgo, trabajo bajo presión y orientación a resultados.
+    </p>
+  </section>
+
+  <section>
+    <h2>Proyectos técnicos</h2>
+
+    <div class="entry">
+      <h3>CampusBot — Asistente de voz inteligente con IA</h3>
+      <div class="role-meta"><span class="where">Proyecto personal · UAB</span><span class="when">2025 — Presente</span></div>
+      <ul>
+        <li>Robot guía físico para la Escola d'Enginyeria UAB. Identifica usuarios por reconocimiento facial, voz o NIU; responde en ES/CA/EN; multi-instancia desde panel central.</li>
+        <li>Backend Python 3.13 con Flask + Flask-SocketIO. Arquitectura modular en 6 capas (api, voice, face, users, data, interface) con &gt;8 features independientes.</li>
+        <li>Integración OpenAI GPT-4o-mini con contexto del campus UAB y RAG TF-IDF propio (sin dependencias externas) sobre páginas oficiales.</li>
+        <li>Reconocimiento facial OpenCV YuNet + SFace (embeddings 128-D, ONNX) sin TensorFlow/PyTorch. Liveness dual: pixel-diff + flujo óptico Farneback (rechaza fotos).</li>
+        <li>Identificación de locutor con Resemblyzer (256-D, similitud coseno ≥ 0.70). Reconocimiento de voz multilingüe con Whisper.</li>
+        <li>TTS streaming PCM con OpenAI directo a PyAudio: audio empieza a sonar en ~200 ms, sin esperar al clip completo.</li>
+        <li>Frontend 3D Three.js + GLSL: cerebro procedural de ~6.200 tetraedros instanciados con tres estados reactivos (idle/listening/speaking) y UnrealBloomPass.</li>
+        <li>Scraper de PDFs de horarios UAB con pdfplumber (celdas fusionadas, filtrado de basura) → SQLite (8 tablas). Inyección automática del horario del día en el contexto del bot.</li>
+        <li>Multi-instancia maestro-esclavo vía Socket.IO. Panel admin con Chart.js v4 (horas pico, idiomas, top consultas, feedback). PWA instalable + suite pytest sobre BD aislada.</li>
+      </ul>
+      <p class="tech"><strong>Stack:</strong> Python 3.13, Flask, Flask-SocketIO, OpenAI API (GPT-4o-mini, Whisper, TTS), OpenCV, Resemblyzer, pdfplumber, SQLite, Three.js, Chart.js, GLSL, pytest, PWA, Socket.IO.</p>
+      <p class="links"><a href="https://github.com/arnaubaeza3">github.com/arnaubaeza3</a></p>
+    </div>
+
+    <div class="entry">
+      <h3>arnauserver.me — Servidor Linux self-hosted en Azure</h3>
+      <div class="role-meta"><span class="where">Proyecto personal en producción</span><span class="when">2026</span></div>
+      <ul>
+        <li>VM Ubuntu en Azure sirviendo el portfolio bajo dominio propio con nginx + TLS y tráfico real.</li>
+        <li>Endurecimiento end-to-end del SO: hardening SSH (claves, no root, sin password), sysctl, fail2ban / CrowdSec, gestión systemd, firewalls (ufw + iptables).</li>
+        <li>Métricas custom y endpoint <code>/status.json</code> con uptime, certs, disco y métricas básicas.</li>
+        <li>DNS, renovación automática de certificados TLS y repositorio reproducible (<em>azure-linux-server</em>) con scripts y documentación.</li>
+      </ul>
+      <p class="tech"><strong>Stack:</strong> Azure, Ubuntu, nginx, TLS, systemd, fail2ban/CrowdSec, Bash, Python, DNS, hardening. Arch Linux, bspwm, dotfiles.</p>
+      <p class="links"><a href="https://arnauserver.me">arnauserver.me</a> · <a href="https://github.com/arnaubaeza3/azure-linux-server">azure-linux-server</a></p>
+    </div>
+
+    <div class="entry">
+      <h3>Optimización de software a bajo nivel en C</h3>
+      <div class="role-meta"><span class="where">Proyecto académico · UAB</span><span class="when">2024</span></div>
+      <ul>
+        <li>Análisis de rendimiento con <code>perf</code> y optimización a bajo nivel sobre código C: localidad de caché, vectorización SIMD y gestión cuidadosa de memoria.</li>
+        <li>Mediciones antes/después de cada cambio para validar impacto real en ciclos de CPU y tiempos de ejecución.</li>
+      </ul>
+      <p class="tech"><strong>Stack:</strong> C, perf, SIMD, GCC, Linux, análisis de rendimiento.</p>
+    </div>
+
+    <div class="entry">
+      <h3>Entorno Linux personalizado en MacBook M4 (aarch64)</h3>
+      <div class="role-meta"><span class="where">Proyecto personal</span><span class="when">2026</span></div>
+      <ul>
+        <li>Instalación manual de Arch Linux ARM + BlackArch sobre MacBook M4 en VMware Fusion: particionado UEFI, GRUB, red, locales, troubleshooting de keyrings.</li>
+        <li>Adaptación de paquetes y dotfiles del ecosistema x86_64 a aarch64 cuando no había builds nativos: compilación desde AUR, sustitución de dependencias y módulos UEFI específicos de ARM.</li>
+        <li>Entorno gráfico productivo: bspwm + polybar + sxhkd + picom + eww widgets, zsh con starship, scripts Bash de mantenimiento.</li>
+      </ul>
+      <p class="tech"><strong>Stack:</strong> Arch Linux, BlackArch, VMware Fusion (ARM), bspwm, polybar, eww, zsh, starship, Bash, AUR.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experiencia laboral</h2>
+
+    <div class="entry">
+      <h3>Encargado de turno</h3>
+      <div class="role-meta"><span class="where">McDonald's España · Parets del Vallès</span><span class="when">ago. 2023 — Presente</span></div>
+      <ul>
+        <li>Liderazgo y coordinación operativa de equipos de hasta 40 personas en restaurante de alto volumen: turnos, roles y resolución de incidencias en tiempo real.</li>
+        <li>Elaboración de horarios, control de inventario, gestión de proveedores y supervisión de estándares de calidad, seguridad e higiene.</li>
+        <li>Apoyo administrativo en contratos/RRHH. Toma de decisiones bajo presión orientada a KPIs (Speed of Service, satisfacción, rentabilidad de turno).</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Mozo de almacén</h3>
+      <div class="role-meta"><span class="where">MANGO · Lliçà d'Amunt</span><span class="when">jul. 2023 — ago. 2023</span></div>
+      <ul>
+        <li>Gestión de paquetería, preparación de pedidos y logística general de las instalaciones.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Profesor particular</h3>
+      <div class="role-meta"><span class="where">Lliçà de Vall · Granollers · Montornés</span><span class="when">ene. 2023 — ene. 2024</span></div>
+      <ul>
+        <li>Clases de Física, Química, Matemáticas, Tecnología e Inglés con seguimiento académico personalizado.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Camarero</h3>
+      <div class="role-meta"><span class="where">Vilamaria · Lliçà de Vall</span><span class="when">jun. 2021 — jul. 2021</span></div>
+      <ul>
+        <li>Responsable del área de cafetería y control general de sala: gestión del tiempo, atención al cliente y coordinación con cocina durante el servicio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Educación</h2>
+
+    <div class="entry">
+      <h3>Grado en Ingeniería Informática</h3>
+      <div class="role-meta"><span class="where">Universitat Autònoma de Barcelona</span><span class="when">sept. 2023 — Presente</span></div>
+      <ul>
+        <li>Cursando 2.º año. Áreas: programación en C y Java, estructuras de datos y algoritmos, bases de datos relacionales (SQL), sistemas operativos, arquitectura de computadores y redes.</li>
+        <li>Trabajos en equipo con metodologías ágiles, control de versiones con Git y documentación técnica colaborativa.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Bachillerato Científico-Tecnológico</h3>
+      <div class="role-meta"><span class="where">Institut Carles Vallbona · Granollers</span><span class="when">sept. 2021 — jun. 2023</span></div>
+      <ul>
+        <li>Itinerario científico-tecnológico (matemáticas, física, tecnología) + dos certificados extracurriculares: Linux y desarrollo de videojuegos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Habilidades técnicas</h2>
+    <dl class="skills">
+      <dt>Lenguajes</dt><dd>Python (avanzado), JavaScript, C, HTML/CSS, Bash, SQL, Java</dd>
+      <dt>Backend / Web</dt><dd>Flask, Flask-SocketIO, REST APIs, WebSockets, PWA, nginx</dd>
+      <dt>Frontend</dt><dd>Three.js, GLSL, Chart.js, JavaScript moderno (ES6+)</dd>
+      <dt>IA / ML</dt><dd>OpenAI API (GPT, Whisper, TTS), OpenCV (YuNet, SFace), Resemblyzer, RAG / TF-IDF</dd>
+      <dt>Bases de datos</dt><dd>SQLite (sin ORM, esquemas y migraciones manuales)</dd>
+      <dt>Cloud / Sistemas</dt><dd>Azure (VM Linux self-hosted), Ubuntu, Arch Linux, macOS, systemd, hardening SSH/TLS, UEFI/GRUB</dd>
+      <dt>Bajo nivel</dt><dd>perf, SIMD, optimización de caché, profiling, gestión de memoria</dd>
+      <dt>Herramientas</dt><dd>Git, GitHub, pytest, pdfplumber, fail2ban/CrowdSec, pacman/AUR, Docker (nociones), Office, Google Workspace</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Certificados</h2>
+    <div class="entry">
+      <h3>Gestión de Sistemas Operativos basados en Linux</h3>
+      <div class="role-meta"><span class="when">2022</span></div>
+      <ul><li>Instalación, configuración y administración de entornos Linux: paquetes, servicios systemd, permisos, scripting básico, resolución de problemas.</li></ul>
+    </div>
+    <div class="entry">
+      <h3>Programación y Diseño de Videojuegos</h3>
+      <div class="role-meta"><span class="when">2022</span></div>
+      <ul><li>Desarrollo de entornos interactivos, diseño visual y lógica de programación aplicada al entretenimiento digital.</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <div class="langs">
+      <div class="lang"><div class="name">Catalán</div><div class="level">Nativo</div></div>
+      <div class="lang"><div class="name">Castellano</div><div class="level">Nativo</div></div>
+      <div class="lang"><div class="name">Inglés</div><div class="level">B2</div></div>
+      <div class="lang"><div class="name">Francés</div><div class="level">A1</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Disponibilidad</h2>
+    <p style="color: var(--text-2);">Lunes a viernes a partir de las 15:00 (tras horario lectivo en la UAB, 08:30 – 14:30). Sábados y domingos: disponibilidad completa.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Arnau Baeza Muñoz · Barcelona</span>
+    <span><a href="/">arnauserver.me</a> · <a href="/uses.html">/uses</a> · <a href="/en/">EN</a></span>
+  </footer>
+</div>
+
+<script src="/js/page-theme.js" defer></script>
+</body>
+</html>
